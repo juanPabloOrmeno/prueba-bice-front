@@ -20,38 +20,18 @@ export class DetalleComponent implements OnInit {
     this.select = localStorage.getItem('select')
     this.lineChartData = [{ data: await this.getValores(), label: this.select}]
     this.lineChartLabels = await this.getFechas()
-
-
-
-    
-   
   }
-
-
 
   getDatos = async () => await this.valoresSwService.valoresTipo(this.select)
   
-
-
-
-  async getValores(){
-
+  getValores = async () => {
     let valores = await this.getDatos();
     let valor = valores.datos['values'];
-
-
-  
-
-
-    console.log(valor)
-
-
-    return [1,1,1,1]
-
+    return   Object.values(valor);
   }
 
 
-  async getFechas(){
+  getFechas = async () =>{
     let fechas = await this.getDatos();
     let fechas2 = fechas.datos['values'];
     let fecha2 =  Object.keys(fechas2);

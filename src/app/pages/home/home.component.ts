@@ -17,19 +17,13 @@ export class HomeComponent implements OnInit {
 
   async ngOnInit() {
    let result =  (await this.valoresSwService.tipos()).datos
-
     this.valores = Object.keys(result).map((key) => result[key]);
-
-    console.log(this.valores)
-
   }
 
 
-  irDetalle(buscar: string){
-    console.log(buscar)
-
-    this.router.navigateByUrl('detalle')
+  irDetalle = (buscar: string) => {
     localStorage.setItem('select', buscar)
+    this.router.navigateByUrl('detalle')
   }
 
 }

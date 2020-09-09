@@ -13,6 +13,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetalleComponent } from './pages/detalle/detalle.component';
 
 import { ChartsModule } from 'ng2-charts';
+import { HeaderComponent } from './compopnent/header/header.component';
+import { FooterComponent } from './compopnent/footer/footer.component';
 
 
 
@@ -29,7 +31,9 @@ export function apiConfigSwagger(): Configuration{
   declarations: [
     AppComponent,
     HomeComponent,
-    DetalleComponent
+    DetalleComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

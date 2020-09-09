@@ -7,6 +7,13 @@
 - npm install
 
 
+## correr de forma local
+- ng serve -o
+
+
+## no es necesario correr backen ya que apunta a heroku
+
+
 ## correr docker con docker-compose
 - docker-compose build
 - docker-compose up -d

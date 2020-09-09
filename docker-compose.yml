@@ -1,0 +1,6 @@
+version: "3"
+services:
+    landing-bice:
+        build: .
+        ports: 
+            - "8050:3050"

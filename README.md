@@ -11,6 +11,10 @@
 - ng serve -o
 
 
+## cambiar servidor al cual apunta cambiar la siguiente variable de enviroment.ts y enviroment.prod.ts
+-basePathApi
+
+
 ## no es necesario correr backen ya que apunta a heroku
 
 

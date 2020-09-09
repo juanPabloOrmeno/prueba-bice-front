@@ -1,0 +1,62 @@
+import { Component, OnInit } from '@angular/core';
+import { ValoresSwService } from '../../services/valores-sw.service'
+
+
+
+@Component({
+  selector: 'app-detalle',
+  templateUrl: './detalle.component.html',
+  styleUrls: ['./detalle.component.less']
+})
+export class DetalleComponent implements OnInit {
+
+  select: any
+  public lineChartData: Array<any> = [{data: []}];
+  public lineChartLabels: Array<any> = [];
+
+  constructor(private valoresSwService: ValoresSwService) { }
+
+  async ngOnInit() {
+    this.select = localStorage.getItem('select')
+    this.lineChartData = [{ data: await this.getValores(), label: this.select}]
+    this.lineChartLabels = await this.getFechas()
+
+
+
+    
+   
+  }
+
+
+
+  getDatos = async () => await this.valoresSwService.valoresTipo(this.select)
+  
+
+
+
+  async getValores(){
+
+    let valores = await this.getDatos();
+    let valor = valores.datos['values'];
+
+
+  
+
+
+    console.log(valor)
+
+
+    return [1,1,1,1]
+
+  }
+
+
+  async getFechas(){
+    let fechas = await this.getDatos();
+    let fechas2 = fechas.datos['values'];
+    let fecha2 =  Object.keys(fechas2);
+    let fechaFormato = fecha2.map((fecha)=> new Date(Number.parseInt(fecha) * 1000).toLocaleDateString("en-US"))
+    return fechaFormato
+  }
+
+}

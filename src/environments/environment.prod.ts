@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  basePathApi: "https://bice-backent-prueba.herokuapp.com"
 };

@@ -14,12 +14,16 @@ export class DetalleComponent implements OnInit {
   public lineChartData: Array<any> = [{data: []}];
   public lineChartLabels: Array<any> = [];
 
+  public loading = false;
+
   constructor(private valoresSwService: ValoresSwService) { }
 
   async ngOnInit() {
+    this.loading = true;
     this.select = localStorage.getItem('select')
     this.lineChartData = [{ data: await this.getValores(), label: this.select}]
     this.lineChartLabels = await this.getFechas()
+    this.loading = false;
   }
 
   getDatos = async () => await this.valoresSwService.valoresTipo(this.select)

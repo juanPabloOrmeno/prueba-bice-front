@@ -17,6 +17,9 @@ import { HeaderComponent } from './compopnent/header/header.component';
 import { FooterComponent } from './compopnent/footer/footer.component';
 
 
+import { NgxLoadingModule } from 'ngx-loading';
+
+
 
 export function apiConfigSwagger(): Configuration{
   const params:ConfigurationParameters = {
@@ -40,6 +43,7 @@ export function apiConfigSwagger(): Configuration{
     AppRoutingModule,
     MaterialModule,
     ChartsModule,
+    NgxLoadingModule.forRoot({}),
     ApiModule.forRoot(apiConfigSwagger),
     HttpClientModule,
     BrowserAnimationsModule

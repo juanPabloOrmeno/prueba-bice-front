@@ -1,39 +1,23 @@
-<!--banner-->
-<div class="content">
 
+<div class="content">
     <app-header></app-header>
-    
     <div class="row valores">
-    
         <div class="col-12 col-lg-4 col-xl-2 col-md-4 col-sm-12" *ngFor="let valor of valores">
-    
             <mat-card class="card">
-               
-            
                 <mat-card-content>
                     <p class="titulo-card">{{valor.key}}</p>
                     <div class="contenido-card">
                         <p>{{valor.name}}</p>
                         <p>{{valor.value}} {{valor.unit}}</p>
                     </div>
-                   
-
                     <button mat-raised-button (click)="irDetalle(valor.key)">Detalle</button>
                 </mat-card-content>
-            
             </mat-card>
-    
         </div>
-    
-    
-        
-    
     </div>
-
-    <app-footer></app-footer> 
-
-   
+    <app-footer></app-footer>
+    <ng-template #customLoadingTemplate>
+    </ng-template>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate">
+    </ngx-loading>
 </div>
-
-
-

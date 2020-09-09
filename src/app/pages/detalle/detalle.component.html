@@ -1,11 +1,7 @@
-<!--banner-->
+
 <div class="content">
-
     <app-header></app-header>
-
     <div class="row valores">
-
-
         <div class="col-12">
 
             <div style="display: block;">
@@ -15,13 +11,10 @@
             </div>
 
         </div>
-
-
-
-
-
     </div>
+    <app-footer></app-footer>
 
-    <app-footer></app-footer> 
-
+    <ng-template #customLoadingTemplate>
+    </ng-template>
+    <ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate"></ngx-loading>
 </div>
